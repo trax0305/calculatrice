@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap"
+        rel="stylesheet">
+    <title>Calculatrice prêt immobilier</title>
+</head>
+
+<body > 
+    <header>
+        <img src="./logo_microlead.png" alt="Logo Mircolead" width="161" height="56">
+    </header>
+    <div class="container">
+        <div id="pdfContent" class="component">
+            <h1>Calculatrice prêt immobilier</h1>
+            <Form action="/" method="post" novalidate>
+                <div class="formRow">
+                    <label for="amount">Montant emprunté</label>
+                    <div class="formInput">
+                        <input type="text" id="amount" name="amount" required placeholder="100 000" pattern="^(?!0+$)\d+$" maxlength="15">
+                        <p class="unité">€</p>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <label for="rate">Taux nominal</label>
+                    <div class="formInput">
+                        <input type="text" id="rate" name="rate" placeholder="1.2" required
+                            pattern="^(?!0$)([1-9]\d{0,1}([.,]\d{1,2})?|0[.,]\d{1,2})$" maxlength="5">
+                        <p class="unité">%</p>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <label for="duration">Durée de remboursement</label>
+                    <div class="formInput">
+                        <input type="text" id="duration" name="duration" placeholder="15" required
+                            pattern="^[1-9](\d){0,1}$" maxlength="2">
+                        <p class="unité">an(s)</p>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <p id="errorMessage" class="errorOnForm itemHidden"></p>
+                </div>
+                <button type="submit">Calculer</button>
+            </Form>
+        </div>
+        <div id="amortization" class="component" style="display: none;"> 
+            <h2>Tableau d'ammortissement</h2>
+            <div class="amortizationTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mois</th>
+                            <th>Solde initial</th>
+                            <th>Échéance</th>
+                            <th>Intérêts</th>
+                            <th>Amortissement</th>
+                            <th>Solde restant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template id="tableRow">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+            <div class="download">
+               <button type="button" id="btnDownload">Télécharger en PDF</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
+
+    <!-- bibliothèque pour générer un fichier pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
+
+</body>
+</html>

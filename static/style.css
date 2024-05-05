@@ -1,0 +1,397 @@
+:root{
+    font-size: 100%; 
+    --colorBlueMicrolead : #234B68;
+    --colorBlueActiveMicrolead : #29517F;
+    --colorGreyMicrolead : #4B5563;
+    --colorOrangeMicrolead : #FF822E;
+    --colorBlack : #030303;
+    --colorWhite : #FCFCFC;
+    --colorBoxShadow : rgba(75, 85, 99, 0.25);
+}
+
+body{
+    font : 16px 'Nunito Sans', Arial, 'sans-serif'; 
+    font-weight: 500;
+    color: var(--colorBlack);
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.container{
+    min-height: calc(100vh - 156px); 
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.component{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--colorBlueMicrolead);
+    background: var(--colorWhite);
+    box-shadow: 0 5px 5px 0 var(--colorBoxShadow);
+    padding: 55px;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--colorBlueMicrolead);
+    margin: 0 0 55px 0;
+}
+
+h2{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--colorBlueMicrolead);
+    margin: 0 0 55px 0;
+}
+
+p{
+    margin: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.formRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+}
+
+label{
+    font-weight: 700;
+    color: var(--colorBlueMicrolead);
+}
+
+.formInput{
+    display: flex;
+}
+
+input{
+    height: 30px;
+    width: 230px;
+    border: 1px solid var(--colorBlueMicrolead);
+    text-indent: 10px;
+}
+
+input::placeholder{
+    text-indent: 10px;
+    font-style: italic;
+    color: var(--colorGreyMicrolead);
+}
+
+input:focus{
+    outline: 1px solid var(--colorBlueActiveMicrolead) ;
+}
+
+.unité{ 
+    width: 60px;
+    font-weight: 700;
+    line-height: 33px;
+    text-align: center;
+    color: var(--colorWhite);
+    border-radius: 0 10px 10px 0;
+    background-color: var(--colorBlueMicrolead);
+}
+
+.errorOnForm{ 
+    min-height: 50px;
+    color: var(--colorOrangeMicrolead);
+}
+
+button{
+    width: 200px;
+    height: 45px;
+    align-self: center;
+    font-weight: 700;
+    color: var(--colorWhite);
+    border: none;
+    border-radius: 10px;
+    background-color: var(--colorBlueMicrolead);
+    box-shadow: 0 4px 4px 0 var(--colorBoxShadow);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--colorBlueActiveMicrolead);
+}
+
+.itemHidden{
+    visibility: hidden;
+}
+
+.onError{
+    border-radius: 5px 0 0 5px;
+    outline-offset: -1px;
+    outline: 1px solid var(--colorOrangeMicrolead) ;
+}
+
+.amortizationTable{
+    width: 100%;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: -30px;
+
+}
+
+th:nth-child(1), td:nth-child(1) {
+    width: 10%; 
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 15%
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 15%
+}
+
+th{
+    width : calc(60% / 3);
+    text-align: right;
+    padding-bottom: 20px;
+    color: var(--colorBlueMicrolead);
+}
+
+td{
+    width : calc(60% / 3);
+    text-align: right;
+    color: var(--colorBlueMicrolead);
+}
+
+.download{
+    margin: 40px 0 0 0;
+}
+
+@media screen and (width: 1540px) {
+    .container{
+        min-height: calc(80vh - 156px); 
+    }
+
+    .component{
+        width: 1000px;
+        padding: 55px 100px;
+    }
+    
+    h1{
+        font-size: 42px;
+    }
+
+    h2{
+        font-size: 34px;
+
+    }
+
+    form{
+        row-gap: 30px;
+    }
+
+    .formRow{
+        column-gap: 60px;
+    }
+
+    label{
+        font-size: 26px;
+    }
+
+    input{
+        height: 40px;
+        width: 330px;
+        font-size: 20px;
+    }
+
+    input::placeholder{
+        font-size: 18px;
+    }
+
+    .unité{ 
+        width: 80px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .errorOnForm{ 
+        font-size: 22px;
+    }
+
+    button{
+        width: 230px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    table{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .component{
+        width: 650px;
+    }
+    
+    .amortizationTable{
+        padding-bottom: 20px;
+        overflow-x: auto;
+    }
+
+    .amortizationTable::-webkit-scrollbar {
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--colorBoxShadow); 
+    }
+
+    .amortizationTable::-webkit-scrollbar-thumb {
+        background: var(--colorBlueMicrolead); 
+        border-radius: 5px;
+    }
+
+    table{
+        width: 700px; 
+    } 
+}
+
+@media screen and (max-width: 750px) {
+
+    .component{
+        width: 500px;
+    }
+
+    h1{
+        font-size: 28px;
+        margin: 0 0 30px 0;
+    }
+
+    h2{
+        font-size: 20px;
+        margin: 0 0 30px 0;
+
+    }
+
+    label{
+        font-size: 14px;
+    }
+
+    input{
+        font-size: 14px;
+    }
+
+    input::placeholder{
+        font-size: 14px;
+    }
+
+    .unité{ 
+        font-size: 14px;
+    }
+
+    .errorOnForm{ 
+        font-size: 14px;
+    }
+
+    button{
+        width: 180px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .formRow{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    table{
+        font-size: 14px;
+    } 
+}   
+
+@media screen and (max-width: 550px) {
+
+    .component{
+        width: 400px;
+    }
+}   
+
+@media screen and (max-width: 450px) {
+
+    .component{
+        width: 300px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    h2{
+        font-size: 16px;
+
+    }
+
+    label{
+        font-size: 12px;
+    }
+
+    input{
+        height: 25px;
+        width: 150px;
+        font-size: 12px;
+    }
+
+    input::placeholder{
+        font-size: 12px;
+    }
+
+    .unité{ 
+        width: 50px;
+        font-size: 12px;
+        line-height: 28px;
+    }
+
+    .errorOnForm{ 
+        font-size: 12px;
+    }
+
+    button{
+        width: 150px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    table{
+        width: 500px;
+        font-size: 12px;
+        margin-left: -20px;
+    } 
+}   
+
+@media screen and (max-width: 350px) {
+
+    .component{
+        width: 250px;
+    }
+}   
